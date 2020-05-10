@@ -1,0 +1,9 @@
+int a;
+a = {
+    int a = 3
+    int b = 3
+    int c = a+a*b+(a+b);
+    c()
+
+    return d = (int (a,b,c){int a=d()()})()
+}

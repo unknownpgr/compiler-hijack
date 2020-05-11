@@ -1,4 +1,4 @@
-// Generated from Test.g4 by ANTLR 4.8
+// Generated from Hijack.g4 by ANTLR 4.8
 package generated;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class TestParser extends Parser {
+public class HijackParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -79,7 +79,7 @@ public class TestParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Test.g4"; }
+	public String getGrammarFileName() { return "Hijack.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -90,13 +90,13 @@ public class TestParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public TestParser(TokenStream input) {
+	public HijackParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	public static class SContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(TestParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(HijackParser.EOF, 0); }
 		public List<CodeContext> code() {
 			return getRuleContexts(CodeContext.class);
 		}
@@ -109,7 +109,7 @@ public class TestParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_s; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitS(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitS(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -168,7 +168,7 @@ public class TestParser extends Parser {
 		public ParenthesesContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitParentheses(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitParentheses(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -182,7 +182,7 @@ public class TestParser extends Parser {
 		public Variable_definitionContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitVariable_definition(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitVariable_definition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -196,7 +196,7 @@ public class TestParser extends Parser {
 		public NumberContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitNumber(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitNumber(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -211,7 +211,7 @@ public class TestParser extends Parser {
 		public Function_callContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitFunction_call(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitFunction_call(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -225,7 +225,7 @@ public class TestParser extends Parser {
 		public CodeblockContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitCodeblock(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitCodeblock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -236,7 +236,7 @@ public class TestParser extends Parser {
 		public SkipContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitSkip(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitSkip(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -247,22 +247,22 @@ public class TestParser extends Parser {
 		public Code_idContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitCode_id(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitCode_id(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	public static class Unary_operationContext extends CodeContext {
 		public Token operator;
 		public CodeContext operand;
-		public TerminalNode OP_UNI_1() { return getToken(TestParser.OP_UNI_1, 0); }
+		public TerminalNode OP_UNI_1() { return getToken(HijackParser.OP_UNI_1, 0); }
 		public CodeContext code() {
 			return getRuleContext(CodeContext.class,0);
 		}
-		public TerminalNode OP_UNI_3() { return getToken(TestParser.OP_UNI_3, 0); }
+		public TerminalNode OP_UNI_3() { return getToken(HijackParser.OP_UNI_3, 0); }
 		public Unary_operationContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitUnary_operation(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitUnary_operation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -276,12 +276,12 @@ public class TestParser extends Parser {
 		public CodeContext code(int i) {
 			return getRuleContext(CodeContext.class,i);
 		}
-		public TerminalNode OP_BIN_1() { return getToken(TestParser.OP_BIN_1, 0); }
-		public TerminalNode OP_BIN_2() { return getToken(TestParser.OP_BIN_2, 0); }
+		public TerminalNode OP_BIN_1() { return getToken(HijackParser.OP_BIN_1, 0); }
+		public TerminalNode OP_BIN_2() { return getToken(HijackParser.OP_BIN_2, 0); }
 		public Binary_operationContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitBinary_operation(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitBinary_operation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -303,14 +303,14 @@ public class TestParser extends Parser {
 		public Function_definitionContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitFunction_definition(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitFunction_definition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	public static class AssignContext extends CodeContext {
 		public CodeContext lhs;
 		public CodeContext rhs;
-		public TerminalNode OP_BIN_3() { return getToken(TestParser.OP_BIN_3, 0); }
+		public TerminalNode OP_BIN_3() { return getToken(HijackParser.OP_BIN_3, 0); }
 		public List<CodeContext> code() {
 			return getRuleContexts(CodeContext.class);
 		}
@@ -320,7 +320,7 @@ public class TestParser extends Parser {
 		public AssignContext(CodeContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitAssign(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitAssign(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -643,7 +643,7 @@ public class TestParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_type_; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitType_(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitType_(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -679,14 +679,14 @@ public class TestParser extends Parser {
 	}
 
 	public static class IdContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(TestParser.ID, 0); }
+		public TerminalNode ID() { return getToken(HijackParser.ID, 0); }
 		public IdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_id; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitId(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitId(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -713,14 +713,14 @@ public class TestParser extends Parser {
 	}
 
 	public static class Type_intContext extends ParserRuleContext {
-		public TerminalNode INT() { return getToken(TestParser.INT, 0); }
+		public TerminalNode INT() { return getToken(HijackParser.INT, 0); }
 		public Type_intContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type_int; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitType_int(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitType_int(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -747,14 +747,14 @@ public class TestParser extends Parser {
 	}
 
 	public static class Type_floatContext extends ParserRuleContext {
-		public TerminalNode FLOAT() { return getToken(TestParser.FLOAT, 0); }
+		public TerminalNode FLOAT() { return getToken(HijackParser.FLOAT, 0); }
 		public Type_floatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type_float; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitType_float(this);
+			if ( visitor instanceof HijackVisitor ) return ((HijackVisitor<? extends T>)visitor).visitType_float(this);
 			else return visitor.visitChildren(this);
 		}
 	}

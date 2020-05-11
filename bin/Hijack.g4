@@ -1,4 +1,4 @@
-grammar Test;
+grammar Hijack;
 
 @header {package generated;}
 
@@ -9,7 +9,6 @@ s
 
 code
 :
-
 	'(' code ')' # parentheses
 	| '{' code* '}' # codeblock
 	| type_ id # variable_definition

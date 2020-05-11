@@ -3,26 +3,26 @@ package compiler;
 import java.util.ArrayList;
 import java.util.List;
 
-import generated.TestBaseVisitor;
-import generated.TestParser.AssignContext;
-import generated.TestParser.Binary_operationContext;
-import generated.TestParser.CodeContext;
-import generated.TestParser.Code_idContext;
-import generated.TestParser.CodeblockContext;
-import generated.TestParser.Function_callContext;
-import generated.TestParser.Function_definitionContext;
-import generated.TestParser.IdContext;
-import generated.TestParser.NumberContext;
-import generated.TestParser.ParenthesesContext;
-import generated.TestParser.SContext;
-import generated.TestParser.SkipContext;
-import generated.TestParser.Type_Context;
-import generated.TestParser.Type_floatContext;
-import generated.TestParser.Type_intContext;
-import generated.TestParser.Unary_operationContext;
-import generated.TestParser.Variable_definitionContext;
+import generated.HijackBaseVisitor;
+import generated.HijackParser.AssignContext;
+import generated.HijackParser.Binary_operationContext;
+import generated.HijackParser.CodeContext;
+import generated.HijackParser.Code_idContext;
+import generated.HijackParser.CodeblockContext;
+import generated.HijackParser.Function_callContext;
+import generated.HijackParser.Function_definitionContext;
+import generated.HijackParser.IdContext;
+import generated.HijackParser.NumberContext;
+import generated.HijackParser.ParenthesesContext;
+import generated.HijackParser.SContext;
+import generated.HijackParser.SkipContext;
+import generated.HijackParser.Type_Context;
+import generated.HijackParser.Type_floatContext;
+import generated.HijackParser.Type_intContext;
+import generated.HijackParser.Unary_operationContext;
+import generated.HijackParser.Variable_definitionContext;
 
-public class Visitor extends TestBaseVisitor<String> {
+public class Visitor extends HijackBaseVisitor<String> {
 	/**
 	 * visitChildren : just visit children. visit = visit children and return value
 	 */

@@ -6,18 +6,18 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
-import generated.TestLexer;
-import generated.TestParser;
-import generated.TestParser.SContext;
+import generated.HijackLexer;
+import generated.HijackParser;
+import generated.HijackParser.SContext;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
 //		Read file
 		CharStream charStream = CharStreams.fromFileName("./source.txt");
 //		Parse file
-		TestLexer lexer = new TestLexer(charStream);
+		HijackLexer lexer = new HijackLexer(charStream);
 		CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
-		TestParser parser = new TestParser(commonTokenStream);
+		HijackParser parser = new HijackParser(commonTokenStream);
 		SContext context = parser.s();
 
 		Visitor visitor = new Visitor();

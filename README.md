@@ -4,7 +4,7 @@
 - Main file including main function.
 ### [Visitor.java](./compiler/Visitor.java)
 - Actual visitor code that generate compiled code.
-### [hijack.g4](./hijack.g4)
+### [Hijack.g4](./Hijack.g4)
 - Antlr4 grammar file for hijack language.
 
 ## Details

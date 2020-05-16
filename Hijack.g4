@@ -2,51 +2,65 @@ grammar Hijack;
 
 @header {package generated;}
 
-s: code* EOF;
+// Start point
+start: code* EOF;
 
-code:
-	'(' code ')'													# parentheses
-	| '{' code* '}'													# codeblock
-	| type_ id														# variable_definition
-	| ret_type = type_ '(' ( | ( id ( ',' id)*)?) ')' body = code	# function_definition
-	| ( type_int | type_float)										# number
-	| id															# code_id
-	| func = code '(' ( | ( code ( ',' code)*)?) ')'				# function_call
-	| operator = OP_UNI_1 operand = code							# unary_operation
-	| ordL = code operator = OP_BIN_1 ordR = code					# binary_operation
-	| ordL = code operator = OP_BIN_2 ordR = code					# binary_operation
-	| operator = OP_UNI_3 operand = code							# unary_operation
-	| lhs = code '=' rhs = code										# assign
-	| code ';'														# skip;
+// Variable type
+type:
+	'void'			# type_void
+	| 'int'			# type_int
+	| 'float'		# type_float
+	| 'bool'		# type_bool
+	| type '[' ']'	# type_array
+	| id			# type_custom;
 
-type_: 'int' | 'float';
+// definition
+def_var: type id;
+def_func: def_var '(' def_var* ')';
+def_struct: id '{' definition+ '}';
+definition: def_var | def_func | def_struct;
 
+// Program flow control
+if_condition: 'if' '(' exp ')';
+if_stat: if_condition codeblock ( 'else' codeblock)?;
+control: if_stat;
+
+// Expression
+exp:
+	id											# exp_id
+	| ( l_int | l_float)						# exp_num
+	| l_string									# exp_string
+	| exp '.' exp								# op_refer
+	| exp '(' ( | exp ( ',' exp+)) ')'			# op_call
+	| '!' exp									# op_negate
+	| ( '+' | '-') exp							# op_sign
+	| exp ( '*' | '/') exp						# op_muldiv
+	| exp ( '+' | '-') exp						# op_addsub
+	| exp ( '>=' | '<=' | '>' | '<' | '==') exp	# op_comp
+	| exp '=' exp								# op_assign
+	| '(' exp ')'								# op_bracket;
+
+// Special rules
+def_var_assign: def_var '=' exp;
+special_rules: def_var_assign;
+
+// Code and codeblock
+code: control | definition | exp | special_rules;
+codeblock: '{' code ( ';' code?)+ '}' | code ';';
+
+// Defaut
 id: ID;
+l_int: INT;
+l_float: FLOAT;
+l_string: STRING;
 
-type_int: INT;
-
-type_float: FLOAT;
-
-OP_UNI_1: '!' | '~';
-
-OP_BIN_1: ( '^' | '*' | '/' | '%' | '&');
-
-OP_BIN_2: '+' | '-' | '|';
-
-OP_BIN_3: '=';
-
-OP_UNI_3: '+' | '-';
-
+// LEX
+STRING: '"' [^"]+ '"';
 ID: ( '_' | [a-zA-Z]) ( '_' | [a-zA-Z0-9])*;
-
 INT: '0' | [1-9] [0-9]*;
-
 FLOAT: INT [.] [0-9]* | [.] [0-9]+;
 
 // White spaces and comments
-
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
-
 COMMENT_LINE: '//' ~[\r\n]* -> skip;
-
 COMMENT_BLOCK: '/*' .*? '*/' -> skip;

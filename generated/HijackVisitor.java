@@ -12,66 +12,89 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface HijackVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by the {@code parentheses}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by {@link HijackParser#l_string}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParentheses(@NotNull HijackParser.ParenthesesContext ctx);
+	T visitL_string(@NotNull HijackParser.L_stringContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code variable_definition}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by the {@code op_bracket}
+	 * labeled alternative in {@link HijackParser#exp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVariable_definition(@NotNull HijackParser.Variable_definitionContext ctx);
+	T visitOp_bracket(@NotNull HijackParser.Op_bracketContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code function_call}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by {@link HijackParser#l_int}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction_call(@NotNull HijackParser.Function_callContext ctx);
+	T visitL_int(@NotNull HijackParser.L_intContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code skip}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by {@link HijackParser#code}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSkip(@NotNull HijackParser.SkipContext ctx);
+	T visitCode(@NotNull HijackParser.CodeContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code code_id}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by {@link HijackParser#l_float}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCode_id(@NotNull HijackParser.Code_idContext ctx);
+	T visitL_float(@NotNull HijackParser.L_floatContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code number}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by {@link HijackParser#def_var_assign}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNumber(@NotNull HijackParser.NumberContext ctx);
+	T visitDef_var_assign(@NotNull HijackParser.Def_var_assignContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link HijackParser#type_float}.
+	 * Visit a parse tree produced by the {@code op_addsub}
+	 * labeled alternative in {@link HijackParser#exp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitType_float(@NotNull HijackParser.Type_floatContext ctx);
+	T visitOp_addsub(@NotNull HijackParser.Op_addsubContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link HijackParser#s}.
+	 * Visit a parse tree produced by the {@code type_void}
+	 * labeled alternative in {@link HijackParser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitS(@NotNull HijackParser.SContext ctx);
+	T visitType_void(@NotNull HijackParser.Type_voidContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code codeblock}
-	 * labeled alternative in {@link HijackParser#code}.
+	 * Visit a parse tree produced by the {@code op_refer}
+	 * labeled alternative in {@link HijackParser#exp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCodeblock(@NotNull HijackParser.CodeblockContext ctx);
+	T visitOp_refer(@NotNull HijackParser.Op_referContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exp_id}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExp_id(@NotNull HijackParser.Exp_idContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exp_num}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExp_num(@NotNull HijackParser.Exp_numContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#definition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDefinition(@NotNull HijackParser.DefinitionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#if_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_stat(@NotNull HijackParser.If_statContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link HijackParser#id}.
 	 * @param ctx the parse tree
@@ -79,43 +102,135 @@ public interface HijackVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitId(@NotNull HijackParser.IdContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code unary_operation}
-	 * labeled alternative in {@link HijackParser#code}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnary_operation(@NotNull HijackParser.Unary_operationContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code binary_operation}
-	 * labeled alternative in {@link HijackParser#code}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBinary_operation(@NotNull HijackParser.Binary_operationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link HijackParser#type_}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitType_(@NotNull HijackParser.Type_Context ctx);
-	/**
-	 * Visit a parse tree produced by the {@code function_definition}
-	 * labeled alternative in {@link HijackParser#code}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunction_definition(@NotNull HijackParser.Function_definitionContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code assign}
-	 * labeled alternative in {@link HijackParser#code}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssign(@NotNull HijackParser.AssignContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link HijackParser#type_int}.
+	 * Visit a parse tree produced by the {@code type_int}
+	 * labeled alternative in {@link HijackParser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitType_int(@NotNull HijackParser.Type_intContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#if_condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_condition(@NotNull HijackParser.If_conditionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#def_struct}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDef_struct(@NotNull HijackParser.Def_structContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#special_rules}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSpecial_rules(@NotNull HijackParser.Special_rulesContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code type_bool}
+	 * labeled alternative in {@link HijackParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_bool(@NotNull HijackParser.Type_boolContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exp_string}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExp_string(@NotNull HijackParser.Exp_stringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_call}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_call(@NotNull HijackParser.Op_callContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#start}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStart(@NotNull HijackParser.StartContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_muldiv}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_muldiv(@NotNull HijackParser.Op_muldivContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#control}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitControl(@NotNull HijackParser.ControlContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code type_float}
+	 * labeled alternative in {@link HijackParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_float(@NotNull HijackParser.Type_floatContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code type_custom}
+	 * labeled alternative in {@link HijackParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_custom(@NotNull HijackParser.Type_customContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_negate}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_negate(@NotNull HijackParser.Op_negateContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code type_array}
+	 * labeled alternative in {@link HijackParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_array(@NotNull HijackParser.Type_arrayContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_comp}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_comp(@NotNull HijackParser.Op_compContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_sign}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_sign(@NotNull HijackParser.Op_signContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#codeblock}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCodeblock(@NotNull HijackParser.CodeblockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#def_func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDef_func(@NotNull HijackParser.Def_funcContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code op_assign}
+	 * labeled alternative in {@link HijackParser#exp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOp_assign(@NotNull HijackParser.Op_assignContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link HijackParser#def_var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDef_var(@NotNull HijackParser.Def_varContext ctx);
 }

@@ -12,10 +12,9 @@ import generated.HijackParser.SContext;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		// Read file
+//		Read file
 		CharStream charStream = CharStreams.fromFileName("./source.txt");
-
-		// Parse file
+//		Parse file
 		HijackLexer lexer = new HijackLexer(charStream);
 		CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
 		HijackParser parser = new HijackParser(commonTokenStream);

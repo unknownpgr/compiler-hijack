@@ -1,5 +1,5 @@
-antlr4.antlrRegisteredTools=4.8@\\hijack\\antlr-4.8-complete.jar\:4.8@C\:\\Users\\unkno\\Desktop\\compiler\\antlr-4.8-complete.jar
-antlr4.antlrToolPath=C\:\\Users\\unkno\\Desktop\\compiler\\antlr-4.8-complete.jar
+antlr4.antlrRegisteredTools=4.8@\\hijack\\antlr-4.8-complete.jar
+antlr4.antlrToolPath=\\antlr-4.8-complete.jar
 antlr4.encoding=UTF-8
 antlr4.listener=false
 antlr4.visitor=true

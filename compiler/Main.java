@@ -26,6 +26,7 @@ public class Main {
 
 		// Compile
 		String code = visitor.visit(context);
+		
 
 		// Print
 		System.out.println("Raw source code : \n" + charStream);

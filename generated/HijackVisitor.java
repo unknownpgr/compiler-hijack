@@ -167,6 +167,12 @@ public interface HijackVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitControl(@NotNull HijackParser.ControlContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link HijackParser#return_phrase}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitReturn_phrase(@NotNull HijackParser.Return_phraseContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code type_float}
 	 * labeled alternative in {@link HijackParser#type}.
 	 * @param ctx the parse tree

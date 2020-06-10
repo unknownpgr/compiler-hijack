@@ -14,16 +14,17 @@ type:
 	| type '[' ']'	# type_array
 	| id			# type_custom;
 
-// definition
+// Definition
 def_var: type id;
-def_func: def_var '(' def_var* ')';
-def_struct: id '{' definition+ '}';
+def_func: def_var '(' ( | def_var (',' def_var)*) ')' codeblock;
+def_struct: id '{' (definition (';' definition)+) '}';
 definition: def_var | def_func | def_struct;
 
 // Program flow control
 if_condition: 'if' '(' exp ')';
 if_stat: if_condition codeblock ( 'else' codeblock)?;
-control: if_stat;
+return_phrase: 'return' exp;
+control: if_stat | return_phrase;
 
 // Expression
 exp:
@@ -31,7 +32,7 @@ exp:
 	| ( l_int | l_float)						# exp_num
 	| l_string									# exp_string
 	| exp '.' exp								# op_refer
-	| exp '(' ( | exp ( ',' exp+)) ')'			# op_call
+	| exp '(' ( | exp ( ',' exp)*) ')'			# op_call
 	| '!' exp									# op_negate
 	| ( '+' | '-') exp							# op_sign
 	| exp ( '*' | '/') exp						# op_muldiv

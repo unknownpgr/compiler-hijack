@@ -186,6 +186,13 @@ public class HijackBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitReturn_phrase(@NotNull HijackParser.Return_phraseContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitType_float(@NotNull HijackParser.Type_floatContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
